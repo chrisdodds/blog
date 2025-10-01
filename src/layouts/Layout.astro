@@ -1,4 +1,6 @@
 ---
+import Footer from "../components/Footer.astro";
+
 interface Props {
   title: string;
   description?: string;
@@ -63,6 +65,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </head>
   <body>
     <slot />
+    <Footer />
   </body>
 </html>
 
@@ -124,6 +127,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     margin: 0 auto;
     padding: 3rem 1.5rem;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 
   @media (max-width: 640px) {
