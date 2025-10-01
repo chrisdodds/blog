@@ -1,0 +1,55 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+---
+
+<Layout title="About - Chris Dodds">
+  <main>
+    <Header showAbout={false} />
+
+    <section class="about">
+      <p>
+        I build infrastructure, write, make music, and sometimes do a little
+        woodworking.
+      </p>
+      <p>
+        You can find me on <a
+          href="https://www.linkedin.com/in/doddschris/"
+          target="_blank"
+          rel="noopener noreferrer">LinkedIn</a
+        > or email me at chris [at] focusfire [dot] net.
+      </p>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .about {
+    max-width: 600px;
+  }
+
+  .about p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #404040;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .about a {
+    color: #1a1a1a;
+    text-decoration: none;
+    border-bottom: 1px solid #d4d4d4;
+    transition: border-color 0.2s ease;
+  }
+
+  .about a:hover {
+    border-bottom-color: #1a1a1a;
+  }
+
+  @media (max-width: 640px) {
+    .about p {
+      font-size: 1.125rem;
+    }
+  }
+</style>
+
