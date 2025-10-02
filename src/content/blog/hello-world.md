@@ -1,7 +1,7 @@
 ---
 title: "Hello World"
 description: "First post on the new blog"
-pubDate: 2025-10-01
+pubDate: 2025-09-30
 tags: ["meta"]
 ---
 

@@ -15,6 +15,6 @@ Example: many moons ago I worked at a company where field offices entered truck 
 
 That feels like what’s happening now. “Rub some AI on everything” creates the cover story, but the real driver is people finally saying: “Why are we doing this?”
 
-Using LLMs for consistently meaningful work is hard. These companies didn’t all become AI experts overnight.
+Using LLMs for meaningful work in a consistent/deterministic way is hard. These companies didn’t all become AI experts overnight.
 
 None of this makes the layoffs less brutal for the people caught up in them, but it does punch some more holes in the AI-is-eating-the-world story.
