@@ -7,7 +7,7 @@ tags: ["writing"]
 
 I started writing again this year - really writing, for the first time in decades.
 
-So far this year I've written a novella, a couple of creative nonfiction pieces, and a handful of flash fiction pieces. Learning more about traditional publishing has been a journey.
+So far I've written a novella, a couple of creative nonfiction pieces, and a handful of flash fiction pieces. Learning more about traditional publishing has been a journey.
 
 I'm coming at it with more strategy than a younger me would have: doing research before I submit, being laser focused on editorial fit, targeting a mix of realistic and long-shot outlets to try to hedge. I've got spreadsheets and dashboards to track things. It's very nerdy.
 
