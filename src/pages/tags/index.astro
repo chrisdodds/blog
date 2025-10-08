@@ -1,0 +1,94 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+
+const allPosts = await getCollection("blog");
+const tags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))].sort();
+
+const tagCounts = tags.map((tag) => ({
+  tag,
+  count: allPosts.filter((post) => post.data.tags?.includes(tag)).length,
+}));
+---
+
+<Layout title="Tags - Chris Dodds">
+  <main>
+    <Header />
+
+    <section class="tags-page">
+      <h1>Browse by Tag</h1>
+      <div class="tags-grid">
+        {
+          tagCounts.map(({ tag, count }) => (
+            <a href={`/tags/${tag}/`} class="tag-card">
+              <span class="tag-name">{tag}</span>
+              <span class="tag-count">
+                {count} {count === 1 ? "post" : "posts"}
+              </span>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .tags-page {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 2rem 0;
+    color: #1a1a1a;
+    letter-spacing: -0.02em;
+  }
+
+  .tags-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .tag-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .tag-card:hover {
+    border-color: #d4d4d4;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+  }
+
+  .tag-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+
+  .tag-count {
+    font-size: 0.875rem;
+    color: #737373;
+  }
+
+  @media (max-width: 640px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    .tags-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

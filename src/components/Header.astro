@@ -13,7 +13,8 @@ const { showAbout = true } = Astro.props;
       <p class="tagline">Tech Person, Writer, Misc.</p>
     </div>
     <div class="header-links">
-      {showAbout && <a href="/about" class="about-link">About</a>}
+      <a href="/tags" class="nav-link">Tags</a>
+      {showAbout && <a href="/about" class="nav-link">About</a>}
       <a href="/rss.xml" class="rss-link" aria-label="RSS Feed">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +74,7 @@ const { showAbout = true } = Astro.props;
     gap: 0.5rem;
   }
 
-  .about-link,
+  .nav-link,
   .rss-link {
     color: #737373;
     text-decoration: none;
@@ -91,7 +92,7 @@ const { showAbout = true } = Astro.props;
     padding: 0.5rem;
   }
 
-  .about-link:hover,
+  .nav-link:hover,
   .rss-link:hover {
     color: #1a1a1a;
     border-color: #d4d4d4;
