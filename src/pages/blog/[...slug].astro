@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 const { post, prevPost, nextPost } = Astro.props;
 const { Content } = await post.render();
 
-const ogImage = `/og/${post.slug}.svg`;
+const ogImage = `/og/${post.slug}.png`;
 
 const jsonLd = {
   "@context": "https://schema.org",

@@ -1,7 +1,7 @@
 ---
 title: "The robot learns to listen"
 description: "Teaching Claude to hold tension instead of resolving it too fast."
-pubDate: 2025-10-10
+pubDate: 2025-10-09
 tags: ["ai"]
 ---
 
