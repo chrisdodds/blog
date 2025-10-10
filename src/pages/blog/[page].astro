@@ -38,16 +38,16 @@ const { page } = Astro.props;
       }
     </section>
 
-    <nav class="pagination">
+    <nav class="pagination" aria-label="Pagination">
       {page.url.prev ? (
         <a href={page.url.prev}>← Newer</a>
       ) : (
-        <span class="disabled">← Newer</span>
+        <span class="disabled" aria-hidden="true">← Newer</span>
       )}
       {page.url.next ? (
         <a href={page.url.next}>Older →</a>
       ) : (
-        <span class="disabled">Older →</span>
+        <span class="disabled" aria-hidden="true">Older →</span>
       )}
     </nav>
   </main>
