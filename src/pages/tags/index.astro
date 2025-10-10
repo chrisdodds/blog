@@ -57,29 +57,37 @@ const tagCounts = tags.map((tag) => ({
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    padding: 1.5rem;
-    background: #fff;
+    padding: 1.75rem;
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
     border: 1px solid #e5e5e5;
-    border-radius: 6px;
+    border-radius: 8px;
     text-decoration: none;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   }
 
   .tag-card:hover {
-    border-color: #d4d4d4;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transform: translateY(-2px);
+    border-color: #c7d2fe;
+    background: linear-gradient(135deg, #eef2ff 0%, #f5f7ff 100%);
+    box-shadow: 0 8px 16px rgba(99, 102, 241, 0.1);
+    transform: translateY(-4px);
   }
 
   .tag-name {
-    font-size: 1.125rem;
-    font-weight: 600;
+    font-size: 1.25rem;
+    font-weight: 700;
     color: #1a1a1a;
+    transition: color 0.2s ease;
+  }
+
+  .tag-card:hover .tag-name {
+    color: #6366f1;
   }
 
   .tag-count {
     font-size: 0.875rem;
     color: #737373;
+    font-weight: 500;
   }
 
   @media (max-width: 640px) {

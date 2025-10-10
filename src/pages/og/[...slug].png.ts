@@ -53,44 +53,13 @@ export const GET: APIRoute = async ({ props }) => {
         width: "100%",
         display: "flex",
         flexDirection: "column",
-        background: "linear-gradient(to bottom right, #ffffff 0%, #f5f5f5 100%)",
-        padding: "0px",
-        fontFamily: "Inter, -apple-system, sans-serif",
+        backgroundColor: "#f5f5f5",
+        padding: "60px",
+        fontFamily: "Georgia, serif",
         position: "relative",
       },
       children: [
-        // Geometric accent shapes
-        {
-          type: "div",
-          props: {
-            style: {
-              position: "absolute",
-              top: "-80px",
-              right: "-80px",
-              width: "300px",
-              height: "300px",
-              border: "40px solid #1a1a1a",
-              borderRadius: "50%",
-              opacity: 0.04,
-            },
-          },
-        },
-        {
-          type: "div",
-          props: {
-            style: {
-              position: "absolute",
-              bottom: "-100px",
-              left: "-100px",
-              width: "250px",
-              height: "250px",
-              backgroundColor: "#1a1a1a",
-              opacity: 0.03,
-              transform: "rotate(45deg)",
-            },
-          },
-        },
-        // Content wrapper
+        // Main card
         {
           type: "div",
           props: {
@@ -98,39 +67,38 @@ export const GET: APIRoute = async ({ props }) => {
               display: "flex",
               flexDirection: "column",
               height: "100%",
-              position: "relative",
-              zIndex: 1,
-              padding: "80px",
+              backgroundColor: "#f9faf9",
+              border: "1px solid #d4d4d4",
+              borderRadius: "12px",
+              padding: "70px",
+              boxShadow: "0 8px 24px rgba(0, 0, 0, 0.12)",
             },
             children: [
-              // Small label
+              // Accent bar
               {
                 type: "div",
                 props: {
                   style: {
-                    fontSize: "20px",
-                    fontWeight: 600,
-                    color: "#737373",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.15em",
-                    marginBottom: "60px",
+                    width: "80px",
+                    height: "4px",
+                    backgroundColor: "#6366f1",
+                    marginBottom: "50px",
                   },
-                  children: "Blog Post",
                 },
               },
-              // Title with emphasis
+              // Title
               {
                 type: "div",
                 props: {
                   style: {
                     display: "flex",
                     flexDirection: "column",
-                    fontSize: "84px",
-                    fontWeight: 900,
+                    fontSize: "72px",
+                    fontWeight: 800,
                     color: "#1a1a1a",
-                    letterSpacing: "-0.05em",
-                    lineHeight: 0.92,
-                    marginBottom: "50px",
+                    letterSpacing: "-0.04em",
+                    lineHeight: 1,
+                    marginBottom: "40px",
                   },
                   children: displayLines.map((line) => ({
                     type: "div",
@@ -140,18 +108,14 @@ export const GET: APIRoute = async ({ props }) => {
                   })),
                 },
               },
-              // Date with box
+              // Date
               {
                 type: "div",
                 props: {
                   style: {
-                    display: "flex",
-                    fontSize: "24px",
-                    color: "#1a1a1a",
-                    fontWeight: 600,
-                    backgroundColor: "#fafafa",
-                    padding: "12px 24px",
-                    border: "2px solid #e5e5e5",
+                    fontSize: "22px",
+                    color: "#737373",
+                    fontWeight: 500,
                   },
                   children: date,
                 },
@@ -173,14 +137,16 @@ export const GET: APIRoute = async ({ props }) => {
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
+                    borderTop: "2px solid #f5f5f5",
+                    paddingTop: "30px",
                   },
                   children: [
                     {
                       type: "div",
                       props: {
                         style: {
-                          fontSize: "34px",
-                          fontWeight: 900,
+                          fontSize: "28px",
+                          fontWeight: 700,
                           color: "#1a1a1a",
                         },
                         children: "Chris Dodds",
@@ -190,12 +156,9 @@ export const GET: APIRoute = async ({ props }) => {
                       type: "div",
                       props: {
                         style: {
-                          fontSize: "24px",
+                          fontSize: "22px",
                           fontWeight: 500,
-                          color: "#737373",
-                          backgroundColor: "#ffffff",
-                          padding: "8px 16px",
-                          border: "1px solid #e5e5e5",
+                          color: "#6366f1",
                         },
                         children: "chrisdodds.net",
                       },

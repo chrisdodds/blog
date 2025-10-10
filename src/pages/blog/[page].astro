@@ -60,6 +60,14 @@ const { page } = Astro.props;
     gap: 3rem;
   }
 
+  .post-preview {
+    background: #f9faf9;
+    border: 1px solid #d4d4d4;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+
   .post-preview a {
     display: block;
     text-decoration: none;
@@ -67,17 +75,17 @@ const { page } = Astro.props;
   }
 
   .post-preview h2 {
-    font-size: 1.75rem;
-    font-weight: 600;
-    margin: 0 0 0.5rem 0;
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin: 0 0 0.75rem 0;
     color: #1a1a1a;
-    letter-spacing: -0.01em;
-    line-height: 1.3;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
     transition: color 0.2s ease;
   }
 
   .post-preview a:hover h2 {
-    color: #404040;
+    color: #6366f1;
   }
 
   .post-preview time {
@@ -88,7 +96,7 @@ const { page } = Astro.props;
   }
 
   .post-preview p {
-    font-size: 1.0625rem;
+    font-size: 1.125rem;
     line-height: 1.7;
     color: #525252;
     margin: 0;
@@ -106,14 +114,20 @@ const { page } = Astro.props;
     color: #1a1a1a;
     text-decoration: none;
     font-size: 0.9375rem;
-    padding: 0.5rem 0.75rem;
-    border-radius: 4px;
-    border: 1px solid #e5e5e5;
+    font-weight: 500;
+    padding: 0.625rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #d4d4d4;
+    background: #f9faf9;
     transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   }
 
   .pagination a:hover {
-    border-color: #d4d4d4;
+    border-color: #6366f1;
+    color: #6366f1;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(99, 102, 241, 0.1);
   }
 
   .pagination .disabled {

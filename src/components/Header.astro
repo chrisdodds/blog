@@ -55,8 +55,6 @@ const { showAbout = true } = Astro.props;
 <style>
   .hero {
     margin-bottom: 3rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #e5e5e5;
   }
 
   .header-content {
@@ -99,10 +97,13 @@ const { showAbout = true } = Astro.props;
     color: #737373;
     text-decoration: none;
     font-size: 0.875rem;
+    font-weight: 500;
     padding: 0.5rem 0.75rem;
-    border-radius: 4px;
+    border-radius: 6px;
     transition: all 0.2s ease;
-    border: 1px solid #e5e5e5;
+    border: 1px solid #d4d4d4;
+    background: #f9faf9;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   }
 
   .social-link {
@@ -114,14 +115,15 @@ const { showAbout = true } = Astro.props;
 
   .nav-link:hover,
   .social-link:hover {
-    color: #1a1a1a;
-    border-color: #d4d4d4;
+    color: #6366f1;
+    border-color: #c7d2fe;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(99, 102, 241, 0.1);
   }
 
   @media (max-width: 640px) {
     .hero {
       margin-bottom: 2rem;
-      padding-bottom: 1.5rem;
     }
 
     h1 {
@@ -132,9 +134,27 @@ const { showAbout = true } = Astro.props;
       font-size: 0.9375rem;
     }
 
-    .header-links {
+    .header-content {
       flex-direction: column;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+
+    .header-links {
+      flex-direction: row;
       gap: 0.375rem;
+      width: 100%;
+    }
+
+    .nav-link,
+    .social-link {
+      font-size: 0.8125rem;
+      padding: 0.5rem 0.625rem;
+    }
+
+    .nav-link {
+      flex: 1;
+      text-align: center;
     }
   }
 </style>
