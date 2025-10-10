@@ -1,6 +1,6 @@
 ---
-title: "Using Claude Sonnet 4.5 with extended thinking"
-description: "Experimenting with Claude's extended thinking and prompt optimization."
+title: "The robot learns to listen"
+description: "Teaching Claude to hold tension instead of resolving it too fast."
 pubDate: 2025-10-10
 tags: ["ai"]
 ---
