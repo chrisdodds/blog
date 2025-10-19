@@ -56,109 +56,17 @@ const { posts } = Astro.props;
 </Layout>
 
 <style>
-  .tag-posts {
-    width: 100%;
-  }
-
   .tag-header {
-    margin-bottom: 3rem;
-  }
-
-  .back {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.375rem;
-    color: #6366f1;
-    text-decoration: none;
-    margin-bottom: 1.5rem;
-    font-size: 0.9375rem;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    padding: 0.5rem 0;
-  }
-
-  .back:hover {
-    color: #4f46e5;
-    transform: translateX(-4px);
+    margin-bottom: 2rem;
   }
 
   h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin: 0 0 0.5rem 0;
-    color: #1a1a1a;
-    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
   }
 
   .count {
-    font-size: 1rem;
-    color: #737373;
-    margin: 0;
-  }
-
-  .posts {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-  }
-
-  .post-preview {
-    background: #f9faf9;
-    border: 1px solid #d4d4d4;
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  }
-
-  .post-preview a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .post-preview h2 {
-    font-size: 1.875rem;
-    font-weight: 700;
-    margin: 0 0 0.75rem 0;
-    color: #1a1a1a;
-    letter-spacing: -0.02em;
-    line-height: 1.25;
-    transition: color 0.2s ease;
-  }
-
-  .post-preview a:hover h2 {
-    color: #6366f1;
-  }
-
-  .post-preview time {
     font-size: 0.875rem;
-    color: #a3a3a3;
-    display: block;
-    margin-bottom: 0.75rem;
-  }
-
-  .post-preview p {
-    font-size: 1.125rem;
-    line-height: 1.7;
-    color: #525252;
+    color: #666;
     margin: 0;
-  }
-
-  @media (max-width: 640px) {
-    h1 {
-      font-size: 2rem;
-    }
-
-    .posts {
-      gap: 2rem;
-    }
-
-    .post-preview h2 {
-      font-size: 1.5rem;
-    }
-
-    .post-preview p {
-      font-size: 1rem;
-    }
   }
 </style>
