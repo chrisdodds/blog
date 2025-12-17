@@ -25,6 +25,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonicalURL} />
 
+    <!-- Performance: DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//gc.zgo.at" />
+    <link rel="dns-prefetch" href="//chrisdodds.goatcounter.com" />
+
     <!-- Primary Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
@@ -201,7 +205,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
   .post-preview time {
     font-size: 0.875rem;
-    color: #666;
+    color: #555; /* Better contrast than #666 */
     display: block;
     margin-bottom: 0.5rem;
   }
@@ -233,7 +237,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   }
 
   .pagination .disabled {
-    color: #999;
+    color: #888; /* Better contrast than #999 */
   }
 
   /* Post content styles */
@@ -421,7 +425,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     a[href^="http"]:after {
       content: " (" attr(href) ")";
       font-size: 0.9em;
-      color: #666;
+      color: #555;
     }
 
     .post-content pre,

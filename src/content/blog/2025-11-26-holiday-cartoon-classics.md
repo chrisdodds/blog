@@ -27,12 +27,12 @@ Meanwhile:
 
 **A Garfield Christmas** Garfield goes to the farm, is cynical. Genuine affection breaks through. Garfield gives Grandma a letter from her dead husband. Nobody earns anything. Nobody proves their worth. Just warmth. I don't even like Garfield ([Garfield Minus Garfield](https://garfieldminusgarfield.net/) is a treat though) and I like this one.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TbL-uxd4ZVw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TbL-uxd4ZVw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="A Garfield Christmas - YouTube video"></iframe>
 
 **A Claymation Christmas Celebration** Anthropomorphic church bells at Notre Dame strike their own heads with mallets to perform Carol of the Bells. One keeps fucking up, loses his mallet. The conductor (Quasimodo) uses a slingshot. Dinosaur hosts argue about wassailing vs waffling. The California Raisins do Motown carols.
 
 Pure creative joy. No trauma arc. No one has to “learn” anything to be tolerated. Just weird little bells smashing themselves in the face. Impossible to find in-full online.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3SOvfher8Dg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3SOvfher8Dg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="A Claymation Christmas Celebration - YouTube video"></iframe>
 
 These don't get the same traction. Can't manufacture catharsis. Nobody quotes them at holiday parties. These are the ones I want my kids to remember anyway.
