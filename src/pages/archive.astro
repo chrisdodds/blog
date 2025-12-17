@@ -1,0 +1,140 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+
+const allPosts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+// Group posts by year
+const postsByYear = allPosts.reduce((acc, post) => {
+  const year = post.data.pubDate.getFullYear();
+  if (!acc[year]) {
+    acc[year] = [];
+  }
+  acc[year].push(post);
+  return acc;
+}, {} as Record<number, typeof allPosts>);
+
+const years = Object.keys(postsByYear)
+  .map(Number)
+  .sort((a, b) => b - a);
+---
+
+<Layout title="Archive - Chris Dodds">
+  <main id="main-content">
+    <Header />
+
+    <section class="archive">
+      <h1>Archive</h1>
+      <p class="intro">
+        {allPosts.length} {allPosts.length === 1 ? "post" : "posts"} from{" "}
+        {years.length} {years.length === 1 ? "year" : "years"}
+      </p>
+
+      <div class="archive-content">
+        {years.map((year) => (
+          <div class="year-section">
+            <h2>{year}</h2>
+            <ul class="post-list">
+              {postsByYear[year].map((post) => (
+                <li>
+                  <a href={`/blog/${post.slug}/`} class="post-link">
+                    {post.data.title}
+                  </a>
+                  <time datetime={post.data.pubDate.toISOString()}>
+                    {post.data.pubDate.toLocaleDateString("en-us", {
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </time>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .intro {
+    font-size: 0.9375rem;
+    color: #666;
+    margin: 0 0 2.5rem 0;
+  }
+
+  .archive-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .year-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .year-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .post-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  .post-link {
+    font-size: 1rem;
+    color: #222;
+    text-decoration: none;
+    flex: 1;
+  }
+
+  .post-link:hover {
+    color: #0066cc;
+    text-decoration: underline;
+  }
+
+  .post-list time {
+    font-size: 0.875rem;
+    color: #999;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 640px) {
+    .post-list li {
+      flex-direction: column;
+      gap: 0.25rem;
+      align-items: flex-start;
+    }
+
+    .post-list time {
+      font-size: 0.8125rem;
+    }
+  }
+</style>
+

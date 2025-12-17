@@ -4,30 +4,50 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 
 const allPosts = await getCollection("blog");
-const tags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))].sort();
+const tags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))];
 
-const tagCounts = tags.map((tag) => ({
-  tag,
-  count: allPosts.filter((post) => post.data.tags?.includes(tag)).length,
-}));
+const tagCounts = tags
+  .map((tag) => ({
+    tag,
+    count: allPosts.filter((post) => post.data.tags?.includes(tag)).length,
+  }))
+  .sort((a, b) => {
+    // Sort by count (descending), then alphabetically
+    if (b.count !== a.count) return b.count - a.count;
+    return a.tag.localeCompare(b.tag);
+  });
+
+const totalPosts = allPosts.length;
 ---
 
 <Layout title="Tags - Chris Dodds">
-  <main>
+  <main id="main-content">
     <Header />
 
     <section class="tags-page">
       <h1>Browse by Tag</h1>
+      <p class="intro">
+        {totalPosts} {totalPosts === 1 ? "post" : "posts"} across {tags.length}{" "}
+        {tags.length === 1 ? "tag" : "tags"}
+      </p>
+
       <div class="tags-grid">
         {
-          tagCounts.map(({ tag, count }) => (
-            <a href={`/tags/${tag}/`} class="tag-card">
-              <span class="tag-name">{tag}</span>
-              <span class="tag-count">
-                {count} {count === 1 ? "post" : "posts"}
-              </span>
-            </a>
-          ))
+          tagCounts.map(({ tag, count }) => {
+            // Calculate relative size for visual hierarchy (larger tags = more posts)
+            const maxCount = tagCounts[0]?.count || 1;
+            const sizeRatio = count / maxCount;
+            const fontSize = 0.875 + sizeRatio * 0.5; // Base 0.875rem, scales up to 1.375rem
+
+            return (
+              <a href={`/tags/${tag}/`} class="tag-card" data-count={count}>
+                <span class="tag-name" style={`font-size: ${fontSize}rem`}>
+                  {tag}
+                </span>
+                <span class="tag-count">{count}</span>
+              </a>
+            );
+          })
         }
       </div>
     </section>
@@ -36,37 +56,79 @@ const tagCounts = tags.map((tag) => ({
 
 <style>
   h1 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .intro {
+    font-size: 0.9375rem;
+    color: #666;
+    margin: 0 0 2rem 0;
   }
 
   .tags-grid {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 0.75rem;
+    align-items: baseline;
   }
 
   .tag-card {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid #ddd;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.25rem;
     text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
   }
 
-  .tag-card:last-child {
-    border-bottom: none;
+  .tag-card:hover {
+    background: #f0f0f0;
+    border-color: #ccc;
+    transform: translateY(-1px);
   }
 
   .tag-name {
-    font-size: 1rem;
+    font-weight: 500;
+    color: #222;
   }
 
   .tag-card:hover .tag-name {
-    text-decoration: underline;
+    color: #0066cc;
   }
 
   .tag-count {
-    font-size: 0.875rem;
-    color: #666;
+    font-size: 0.75rem;
+    color: #999;
+    background: #fff;
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.125rem;
+    font-weight: 500;
+    min-width: 1.5rem;
+    text-align: center;
+  }
+
+  /* Larger tags get more visual weight */
+  .tag-card[data-count="1"] {
+    opacity: 0.7;
+  }
+
+  @media (max-width: 640px) {
+    .tags-grid {
+      gap: 0.5rem;
+    }
+
+    .tag-card {
+      padding: 0.375rem 0.75rem;
+      font-size: 0.875rem;
+    }
+
+    .tag-count {
+      font-size: 0.6875rem;
+      padding: 0.125rem 0.25rem;
+    }
   }
 </style>

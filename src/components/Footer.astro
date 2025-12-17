@@ -4,51 +4,80 @@ const currentYear = new Date().getFullYear();
 
 <footer>
   <div class="footer-content">
-    <p>&copy; {currentYear} Chris Dodds</p>
-    <nav aria-label="Footer navigation">
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/writing">Writing</a>
+      <a href="/tags">Tags</a>
+      <a href="/archive">Archive</a>
       <a href="/about">About</a>
+      <span class="separator">·</span>
+      <a
+        href="https://bsky.app/profile/liquid-chicken.bsky.social"
+        target="_blank"
+        rel="noopener noreferrer">Bluesky</a
+      >
+      <a
+        href="https://www.linkedin.com/in/doddschris/"
+        target="_blank"
+        rel="noopener noreferrer">LinkedIn</a
+      >
+      <span class="separator">·</span>
       <a href="/rss.xml">RSS</a>
     </nav>
+    <p class="copyright">&copy; {currentYear} Chris Dodds</p>
   </div>
 </footer>
 
 <style>
   footer {
-    max-width: 650px;
-    margin: 2rem auto 0 auto;
-    padding: 1rem;
-    border-top: 1px solid #ddd;
+    max-width: 33em;
+    margin: 3rem auto 0 auto;
+    padding: 2rem 1.5rem 1.5rem;
   }
 
   .footer-content {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.875rem;
-    color: #666;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  nav {
-    display: flex;
+    flex-direction: column;
     gap: 1rem;
   }
 
-  a {
-    color: #0066cc;
-    text-decoration: none;
+  .copyright {
+    font-size: 0.8125rem;
+    color: #999;
+    margin: 0;
   }
 
-  a:hover {
+  .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    font-size: 0.875rem;
+  }
+
+  .footer-nav a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer-nav a:hover {
+    color: #0066cc;
     text-decoration: underline;
   }
 
+  .separator {
+    color: #ccc;
+    user-select: none;
+  }
+
   @media (max-width: 640px) {
-    .footer-content {
-      flex-direction: column;
+    footer {
+      padding: 1.5rem 1rem 1rem;
+      margin-top: 2rem;
+    }
+
+    .footer-nav {
       gap: 0.5rem;
     }
   }

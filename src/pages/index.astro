@@ -20,8 +20,32 @@ const postsWithContent = await Promise.all(
 );
 ---
 
-<Layout title="Chris Dodds">
-  <main>
+<Layout title="Chris Dodds" description="Tech Person, Writer, Misc.">
+  <!-- Homepage structured data -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Chris Dodds",
+      url: "https://chrisdodds.net",
+      description: "Tech Person, Writer, Misc.",
+      author: {
+        "@type": "Person",
+        name: "Chris Dodds",
+        url: "https://chrisdodds.net",
+        sameAs: [
+          "https://bsky.app/profile/liquid-chicken.bsky.social",
+          "https://www.linkedin.com/in/doddschris/",
+        ],
+      },
+      potentialAction: {
+        "@type": "ReadAction",
+        target: "https://chrisdodds.net/rss.xml",
+      },
+    })}
+  />
+  <main id="main-content">
     <Header />
 
     <section class="posts">

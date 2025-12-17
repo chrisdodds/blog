@@ -1,6 +1,6 @@
 ---
 title: "Longlisted for Fractured Lit's 2025 Elsewhere Prize"
-description: "A piece I wrote got longlisted for FracturedLit's Elsewhere Prize"
+description: "A piece I wrote got longlisted for Fractured Lit's Elsewhere Prize"
 pubDate: 2025-12-01
 tags: ["writing"]
 ---

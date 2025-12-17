@@ -20,7 +20,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonicalURL} />
@@ -36,6 +36,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta property="og:site_name" content="Chris Dodds" />
+    <meta property="og:locale" content="en_US" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -58,6 +60,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       src="//gc.zgo.at/count.js"></script>
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <slot />
     <Footer />
   </body>
@@ -69,7 +72,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   }
 
   html {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    /* Practical Typography: Better font stack with serif option for body text */
+    font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+    overflow-x: hidden;
   }
 
   body {
@@ -78,18 +83,50 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     background: #fff;
     color: #222;
     line-height: 1.5;
+    overflow-x: hidden;
+    width: 100%;
+    /* Practical Typography: Better text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
+  /* Practical Typography: Monospaced fonts for code */
   code {
-    font-family: "Courier New", monospace;
+    font-family: "Courier New", Courier, "Liberation Mono", monospace;
+    font-size: 0.9em; /* Slightly smaller than body text */
+  }
+
+  /* Skip link for accessibility */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #0066cc;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    z-index: 100;
+  }
+
+  .skip-link:focus {
+    top: 0;
   }
 
   /* Shared layout styles */
+  /* Practical Typography: Optimal line length is 45-90 characters (66 ideal) */
+  /* At 18px font size, ~66 characters ≈ 33em ≈ 528px, but 650px is acceptable */
   main {
-    max-width: 650px;
+    max-width: 38em; /* ~608px at base font size - comfortable reading width */
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem; /* Practical Typography: Generous margins */
     min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  main:focus {
+    outline: none;
   }
 
   /* Common typography */
@@ -200,31 +237,54 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   }
 
   /* Post content styles */
+  /* Practical Typography: Body text 15-25px, line spacing 120-145% */
   .post-content,
   .content {
-    font-size: 1.125rem;
-    line-height: 1.7;
+    font-size: 1.125rem; /* 18px - good for web */
+    line-height: 1.6; /* 160% - slightly tighter than before, still comfortable */
     color: #222;
+    /* Practical Typography: Optimal line length */
+    max-width: 100%;
+    /* Practical Typography: Widow and orphan control */
+    orphans: 3;
+    widows: 3;
   }
 
+  /* Practical Typography: Clear hierarchy with proper spacing */
   .post-content h1,
   .post-content h2,
   .content h2 {
     font-size: 1.75rem;
     font-weight: 700;
-    margin: 2rem 0 0.5rem 0;
+    margin: 1.5em 0 0.5em 0; /* Use em for proportional spacing */
+    line-height: 1.2; /* Tighter line height for headings */
   }
 
   .post-content h3,
   .content h3 {
     font-size: 1.25rem;
     font-weight: 700;
-    margin: 1.5rem 0 0.5rem 0;
+    margin: 1.25em 0 0.5em 0;
+    line-height: 1.3;
   }
 
+  /* Practical Typography: Space between paragraphs should be consistent */
   .post-content p,
   .content p {
-    margin: 0 0 1.25rem 0;
+    margin: 0 0 1.5em 0; /* Use em for proportional spacing */
+    /* Practical Typography: Prevent widows and orphans */
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Practical Typography: First paragraph after heading needs less space */
+  .post-content h1 + p,
+  .post-content h2 + p,
+  .post-content h3 + p,
+  .content h1 + p,
+  .content h2 + p,
+  .content h3 + p {
+    margin-top: 0;
   }
 
   .post-content a,
@@ -238,6 +298,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     color: #0052a3;
   }
 
+  /* Accessibility: Focus states */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid #0066cc;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
   .post-content code,
   .content code {
     background: #f5f5f5;
@@ -247,11 +315,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
   .post-content pre,
   .content pre {
-    background: #f5f5f5;
-    padding: 1rem;
+    background: #f8f8f8;
+    padding: 1.25rem;
     overflow-x: auto;
-    margin: 1rem 0;
-    border: 1px solid #ddd;
+    margin: 1.5em 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.25rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
   }
 
   .post-content pre code,
@@ -260,12 +331,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     padding: 0;
   }
 
+  /* Practical Typography: Blockquotes need proper indentation and spacing */
   .post-content blockquote,
   .content blockquote {
     border-left: 3px solid #ddd;
-    padding-left: 1rem;
-    margin: 1rem 0;
-    color: #666;
+    padding-left: 1.5em; /* Use em for proportional spacing */
+    margin: 1.5em 0;
+    color: #555; /* Slightly darker than before for better readability */
+    font-style: italic;
   }
 
   .post-content blockquote p,
@@ -291,13 +364,94 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     font-weight: 700;
   }
 
+  /* Responsive media */
+  .post-content img,
+  .content img,
+  .post-content iframe,
+  .content iframe,
+  .post-content video,
+  .content video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .post-content iframe,
+  .content iframe {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Ensure content doesn't overflow */
+  .post-content,
+  .content {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    max-width: 100%;
+  }
+
+  /* Print styles */
+  @media print {
+    main {
+      max-width: 100%;
+      padding: 0;
+    }
+
+    .hero,
+    footer,
+    .back,
+    .post-nav,
+    .related-posts,
+    nav {
+      display: none;
+    }
+
+    .post-content,
+    .content {
+      font-size: 12pt;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #000;
+      text-decoration: underline;
+    }
+
+    a[href^="http"]:after {
+      content: " (" attr(href) ")";
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    .post-content pre,
+    .content pre {
+      border: 1px solid #ccc;
+      page-break-inside: avoid;
+    }
+  }
+
   @media (max-width: 640px) {
+    main {
+      padding: 1rem;
+      max-width: 100%; /* Full width on mobile for better use of space */
+    }
+
     h1 {
       font-size: 2rem;
+      line-height: 1.2;
     }
 
     h2 {
       font-size: 1.25rem;
+      line-height: 1.3;
+    }
+
+    /* Practical Typography: Slightly smaller on mobile but still readable */
+    .post-content,
+    .content {
+      font-size: 1rem; /* 16px - minimum for comfortable reading */
+      line-height: 1.6; /* Maintain good line spacing */
     }
   }
 </style>
