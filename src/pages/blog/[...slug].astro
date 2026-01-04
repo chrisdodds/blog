@@ -3,9 +3,9 @@ import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  const posts = (await getCollection("blog")).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-  );
+  const posts = (await getCollection("blog"))
+    .filter((post) => !post.data.draft)
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
   return posts.map((post, index) => ({
     params: { slug: post.slug },
@@ -21,7 +21,7 @@ const { post, prevPost, nextPost } = Astro.props;
 const { Content } = await post.render();
 
 // Find related posts (shared tags, excluding current post)
-const allPosts = (await getCollection("blog")).filter((p) => p.slug !== post.slug);
+const allPosts = (await getCollection("blog")).filter((p) => p.slug !== post.slug && !p.data.draft);
 const relatedPosts = allPosts
   .filter((p) => {
     if (!post.data.tags || !p.data.tags) return false;

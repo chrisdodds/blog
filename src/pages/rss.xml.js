@@ -5,9 +5,9 @@ import { loadRenderers } from "astro:container";
 import { getContainerRenderer as getMDXRenderer } from "@astrojs/mdx";
 
 export async function GET(context) {
-  const posts = (await getCollection("blog")).sort(
-    (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
-  );
+  const posts = (await getCollection("blog"))
+    .filter((post) => !post.data.draft)
+    .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
   const renderers = await loadRenderers([getMDXRenderer()]);
   const container = await AstroContainer.create({ renderers });
 

@@ -3,6 +3,7 @@ title: "You can't rent swim trunks"
 description: "I go to India for some reason"
 pubDate: 2025-10-07
 tags: ["writing", "non-fiction", "cnf", "travel", "work"]
+draft: true
 ---
 
 I’m not sure why we’re in Bangalore. Put some faces to the names we see in emails? Knowledge sharing? None of the answers stick. None of them feel real. I’ve never been, so I don’t push back.
