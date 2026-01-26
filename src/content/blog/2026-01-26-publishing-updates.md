@@ -26,7 +26,7 @@ Has turned into:
 
 "This Did Not Matter" didn't make the [short list for Fractured Lit's Elsewhere Prize](/blog/2025-12-01-longlisted-fractured-lit-elsewhere), which was a bummer, but expected. I'm shopping it to some more horror/dark-fantasy-focused venues.
 
-The acceptance is one of my weirder pieces about dissociation and giving up agency. Also a little spicy. It got picked up by [BULL](https://mrbullbull.com/newbull/). I'll link to it once it's live. It got a very binary reaction on CritiqueCircle, which probably means it's good. :D
+The acceptance listed above is one of my weirder pieces - about dissociation and giving up agency. Also a little spicy. It got picked up by [BULL](https://mrbullbull.com/newbull/). I'll link to it once it's live. It got a very binary reaction on CritiqueCircle, which probably means it's good. :D
 
 The exciting thing which cannot be discussed yet was a big surprise. Soon, my precious. Soon.
 
