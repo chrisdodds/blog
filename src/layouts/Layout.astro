@@ -124,7 +124,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     max-width: 38em; /* ~608px at base font size - comfortable reading width */
     margin: 0 auto;
     padding: 2rem 1.5rem; /* Practical Typography: Generous margins */
-    min-height: 100vh;
+    min-height: calc(100vh - 8rem);
     width: 100%;
     overflow-x: hidden;
   }

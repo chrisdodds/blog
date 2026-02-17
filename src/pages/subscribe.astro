@@ -1,0 +1,95 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+---
+
+<Layout title="Subscribe - Chris Dodds">
+  <main id="main-content">
+    <Header />
+
+    <section class="subscribe">
+      <h2>Email</h2>
+      <p>Get new posts delivered to your inbox.</p>
+      <form
+        action="https://buttondown.com/api/emails/embed-subscribe/chrisdodds"
+        method="post"
+        class="subscribe-form"
+        referrerpolicy="unsafe-url"
+      >
+        <input
+          type="email"
+          name="email"
+          id="bd-email"
+          placeholder="you@example.com"
+          required
+          aria-label="Email address"
+        />
+        <button type="submit">Subscribe</button>
+      </form>
+
+      <h2>RSS</h2>
+      <p>
+        Subscribe with your favorite feed reader: <a href="/rss.xml">/rss.xml</a>
+      </p>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .subscribe p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin: 0 0 1.25rem 0;
+  }
+
+  .subscribe h2 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem 0;
+  }
+
+  .subscribe h2:first-child {
+    margin-top: 0;
+  }
+
+  .subscribe-form {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 24rem;
+  }
+
+  .subscribe-form input[type="email"] {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    font-family: inherit;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+  }
+
+  .subscribe-form input[type="email"]:focus {
+    outline: 2px solid #0066cc;
+    outline-offset: -1px;
+    border-color: #0066cc;
+  }
+
+  .subscribe-form button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #0066cc;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+
+  .subscribe-form button:hover {
+    background: #0052a3;
+  }
+
+  @media (max-width: 640px) {
+    .subscribe-form {
+      flex-direction: column;
+    }
+  }
+</style>

@@ -129,6 +129,10 @@ const jsonLd = {
         <Content />
       </div>
 
+      <aside class="subscribe-cta">
+        <p><strong>Enjoyed this post?</strong> <a href="/subscribe">Subscribe</a> to get new posts by email or RSS.</p>
+      </aside>
+
       {
         relatedPosts.length > 0 && (
           <section class="related-posts">
@@ -225,10 +229,19 @@ const jsonLd = {
     color: #0066cc;
   }
 
-  .related-posts {
+  .subscribe-cta {
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid #ddd;
+    font-size: 1.125rem;
+  }
+
+  .subscribe-cta p {
+    margin: 0;
+  }
+
+  .related-posts {
+    margin-top: 2rem;
   }
 
   .related-posts h2 {
@@ -261,8 +274,6 @@ const jsonLd = {
     display: flex;
     justify-content: space-between;
     margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid #ddd;
     font-size: 0.875rem;
   }
 
