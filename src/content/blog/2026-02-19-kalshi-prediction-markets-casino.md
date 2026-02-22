@@ -6,7 +6,7 @@ tags: ["projects", "learning"]
 draft: false
 ---
 
-I kept seeing people talk about making bank on [Kalshi](https://kalshi.com). It's a prediction market: you buy contracts on whether something will happen (temperature, TSA numbers, whatever). "I'm just trading on information," etc. I wanted to see what was actually there, so I had Claude Code build a bot. It also helped with a good deal of the math because I had a football coach for a high school math teacher.
+I kept seeing people talk about making bank on [Kalshi](https://kalshi.com). It's a prediction market: you buy contracts on whether something will happen (temperature, TSA numbers, "I'm just trading on information," etc). I wanted to see what was actually there, so I had Claude Code build a bot. It also helped with a good deal of the math because I had a football coach for a high school math teacher.
 
 ## What do?
 
@@ -42,4 +42,4 @@ The dangerous part is the framing. Prediction markets get sold as information ag
 
 Because it's dressed up as trading or forecasting instead of gambling, people who'd never sit down at a blackjack table (a well-played hand has better odds than this) will sink money in thinking they're doing something rational. It's a casino with a think-tank aesthetic.
 
-I got the weather bot profitable-ish by turning off half the strategy, blacklisting cities, and adding a pile of filters. It'll probably make a little money at a glacial pace. If you're buying YES on the cheap longshot contracts, that's just straight-up gambling. It *was* fun to build though and I learned some stat and weather stuff.
+I got the weather bot profitable-ish by turning off half the strategy, blacklisting cities, and adding a pile of filters. It'll probably make a little money at a glacial pace. It *was* fun to build though and I learned some stat and weather stuff.
