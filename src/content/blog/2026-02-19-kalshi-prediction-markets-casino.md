@@ -36,10 +36,14 @@ The other TSA bot guy ([Ferraiolo](https://ferraijv.github.io/kalshi_tsa_trading
 
 ## The house always wins
 
-I looked at other Kalshi categories too. Gas, CPI (consumer price index), whatever. There's a [University College Dublin analysis](https://karlwhelan.com/sports-betting-kalshi-prediction-market/) (Whelan et al., 300K+ contracts) that finds the same thing everywhere. Cheap contracts (under 10¢) lose 60%+ of invested money on average (i.e. capital loss, not just loss rate per trade). Contracts above 50¢ earn small positive returns. So the "edge" isn't magic. It's betting on the likely outcome, posting your price and waiting, and not chasing lottery tickets.
+I looked at other Kalshi categories too. Gas, CPI (consumer price index), whatever. There's a [University College Dublin analysis](https://karlwhelan.com/sports-betting-kalshi-prediction-market/) (Whelan et al., 300K+ contracts) that finds the same thing everywhere. Cheap contracts (under 10¢) lose 60%+ of invested money on average (i.e. capital loss, not just loss rate per trade). Contracts above 50¢ earn small positive returns. The same paper notes that Kalshi prices are still highly informative as forecasts—-the bias is systematic (they model it as people overestimating small probabilities), not random. So the "edge" isn't magic. It's betting on the likely outcome (or against the unlikely), posting your price and waiting, and not chasing lottery tickets.
 
 The dangerous part is the framing. Prediction markets get sold as information aggregation, "put your money where your mouth is," sounding rational and humble about uncertainty. That makes it sound like the smart or well-informed win. They don't. The structure wins. The people buying cheap YES contracts (the longshots, the "maybe this time" bets) are the ones losing 60%+ of their money to fees and stacked odds. People most at risk are those who think they have an edge because they follow the news or did some research. Even my little experiment here probably has an expiration date. I'm no quant, but neither are the people posting about their "earnings." Unless they got in super early while the market was still flapping around, it's just survivorship bias.
 
 Because it's dressed up as trading or forecasting instead of gambling, people who'd never sit down at a blackjack table (a well-played hand has better odds than this) will sink money in thinking they're doing something rational. It's a casino with a think-tank aesthetic.
 
 I got the weather bot profitable-ish by turning off half the strategy, blacklisting cities, and adding a pile of filters. It'll probably make a little money at a glacial pace. It *was* fun to build though and I learned some stat and weather stuff.
+
+**Update**
+
+The expiration date came faster than expected. Return began trending under break even so I pulled the bot. I modeled a few different paths forward: tweaks to the ensemble-based model, a lite-model version that was more focused on time-of-NWS-info-drop, and looking for other mispriced angles in general. No dice. He's dead, Jim.
