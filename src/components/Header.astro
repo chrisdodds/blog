@@ -1,4 +1,6 @@
 ---
+import { SITE_TAGLINE } from "../config";
+
 interface Props {
   showAbout?: boolean;
 }
@@ -8,9 +10,9 @@ const { showAbout = true } = Astro.props;
 
 <header class="hero">
   <div class="header-content">
-    <div>
+    <div class="header-brand">
       <h1><a href="/">Chris Dodds</a></h1>
-      <p class="tagline">Tech Person, Writer, Misc.</p>
+      <p class="tagline">{SITE_TAGLINE}</p>
     </div>
     <nav class="header-links" aria-label="Main navigation">
       <a href="/writing" class="nav-link" title="Writing">Writing</a>
@@ -31,6 +33,12 @@ const { showAbout = true } = Astro.props;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
+  }
+
+  .header-brand {
+    min-width: 0;
+    flex: 1 1 auto;
   }
 
   h1 {
@@ -59,6 +67,7 @@ const { showAbout = true } = Astro.props;
     display: flex;
     gap: 1rem;
     align-items: center;
+    flex-shrink: 0;
   }
 
   .nav-link {

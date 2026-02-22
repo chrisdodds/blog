@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import { loadRenderers } from "astro:container";
 import { getContainerRenderer as getMDXRenderer } from "@astrojs/mdx";
+import { SITE_TAGLINE } from "../config";
 
 export async function GET(context) {
   const posts = (await getCollection("blog"))
@@ -28,7 +29,7 @@ export async function GET(context) {
 
   return rss({
     title: "Chris Dodds",
-    description: "Tech Person, Writer, Misc.",
+    description: SITE_TAGLINE,
     site: context.site,
     items,
     customData: `<language>en-us</language>`,

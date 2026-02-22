@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import { SITE_TAGLINE } from "../config";
 
 const allPosts = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
@@ -20,7 +21,7 @@ const postsWithContent = await Promise.all(
 );
 ---
 
-<Layout title="Chris Dodds" description="Tech Person, Writer, Misc.">
+<Layout title="Chris Dodds" description={SITE_TAGLINE}>
   <!-- Homepage structured data -->
   <script
     type="application/ld+json"
@@ -29,7 +30,7 @@ const postsWithContent = await Promise.all(
       "@type": "WebSite",
       name: "Chris Dodds",
       url: "https://chrisdodds.net",
-      description: "Tech Person, Writer, Misc.",
+      description: SITE_TAGLINE,
       author: {
         "@type": "Person",
         name: "Chris Dodds",
