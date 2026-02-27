@@ -49,6 +49,10 @@ const postsWithContent = await Promise.all(
   <main id="main-content">
     <Header />
 
+    <p class="announce-line">
+      Novella forthcoming: <a href="https://necessarycuts.com" target="_blank" rel="noopener noreferrer">Necessary Cuts</a> (Miami University Press, 2026 Novella Prize).
+    </p>
+
     <section class="posts">
       {
         postsWithContent.map((post) => (
@@ -96,6 +100,21 @@ const postsWithContent = await Promise.all(
 </Layout>
 
 <style>
+  .announce-line {
+    font-size: 0.875rem;
+    color: #555;
+    margin: -0.5rem 0 1.5rem 0;
+  }
+
+  .announce-line a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  .announce-line a:hover {
+    text-decoration: underline;
+  }
+
   .post-full {
     padding-bottom: 2rem;
     border-bottom: 1px solid #ddd;

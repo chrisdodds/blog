@@ -3,6 +3,7 @@ title: "The robot learns to listen"
 description: "Teaching Claude to hold tension instead of resolving it too fast."
 pubDate: 2025-10-09
 tags: ["ai"]
+draft: true
 ---
 
 ChatGPT and Claude have been my go-to model families for a while. I've tried others, they're not as good. For the last several months, I've mostly used Claude for coding/dev work and ChatGPT for everything else: documentation, analysis, etc.
