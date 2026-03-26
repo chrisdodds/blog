@@ -13,7 +13,7 @@ I don't have an audience anymore. The one I had before I quit tech blogging wasn
 
 2. I wired up a fragment of the book to some low-key visuals and sounds and made an interactive narrative. [Check it out](https://necessarycuts.com/play.html).
 
-Interactive narratives have interested me for a while. I've seen quite a few at this point but haven't really loved that many of them. I usually want them to be more ambiguous than they are. The potential feels like it's there and there are a least a few successful examples.. [Kentucky Route Zero](https://kentuckyroutezero.com/) is a good one that comes to mind. I also like [Betwixt](https://apps.apple.com/app/betwixt-the-story-of-you/id1540472983), even though it sits a little closer to a "therapy" app.
+Interactive narratives have interested me for a while. I've seen quite a few at this point but haven't really loved that many of them. I usually want them to be more ambiguous than they are. The potential feels like it's there and there are a least a few successful examples. [Kentucky Route Zero](https://kentuckyroutezero.com/) is a good one that comes to mind. I also like [Betwixt](https://apps.apple.com/app/betwixt-the-story-of-you/id1540472983), even though it sits a little closer to a "therapy" app.
 
 This was an opportunity to play around with something basic and get a feel for how I might approach a larger work.
 
