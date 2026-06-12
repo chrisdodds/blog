@@ -8,19 +8,60 @@ import Header from "../components/Header.astro";
     <Header />
 
     <section class="writing">
-      <h2>Published Work</h2>
-      <h3>Fiction</h3>
+      <h2>Necessary Cuts</h2>
+      <p>
+        My debut novella, winner of the 2026 <a
+          href="https://sites.miamioh.edu/miami-university-press/"
+          target="_blank"
+          rel="noopener noreferrer">Miami University Press</a
+        > Novella Prize. Forthcoming. You can <a
+          href="https://necessarycuts.com"
+          target="_blank"
+          rel="noopener noreferrer">read an interactive fragment</a
+        > while you wait.
+      </p>
+
+      <h2>Short Fiction</h2>
       <ul>
         <li>
-          <a href="https://necessarycuts.com" target="_blank" rel="noopener noreferrer"><em>Necessary Cuts</em></a> (novella) - Miami University Press
-          (forthcoming, winner of the 2026 Novella Prize)
+          <a href="https://mrbullbull.com/newbull/flash-fiction/dog-2/" target="_blank" rel="noopener noreferrer"><em>Dog</em></a> — BULL, 2026
+          <blockquote>
+            "Easier to be chosen than to choose. Jenni knows this. She pulls us
+            through the day on an invisible leash—her grandmother's birthday, a
+            trailer park, a couch that looks like an orange muppet—until
+            there's no edges left."
+          </blockquote>
         </li>
-        <li><a href="https://mrbullbull.com/newbull/flash-fiction/dog-2/" target="_blank" rel="noopener noreferrer"><em>Dog</em></a> (short story) - BULL</li>
       </ul>
-      <h3>Nonfiction</h3>
+
+      <h2>Nonfiction</h2>
       <ul>
-        <li><a href="https://marrowmagazine.com/the-desert/" target="_blank" rel="noopener noreferrer"><em>The Desert</em></a> - Marrow Magazine, Issue 16</li>
+        <li>
+          <a href="https://marrowmagazine.com/the-desert/" target="_blank" rel="noopener noreferrer"><em>The Desert</em></a> — Marrow Magazine, Issue 16
+          <blockquote>
+            "I deleted him from my phone. His name was my hand hovering over a
+            garbage disposal."
+          </blockquote>
+        </li>
       </ul>
+
+      <h2>Recognition</h2>
+      <ul>
+        <li>
+          Longlist, <a
+            href="https://fracturedlit.com/fractured-lit-2025-elsewhere-prize-judged-by-jemimah-wei-longlist/"
+            target="_blank"
+            rel="noopener noreferrer">Fractured Lit 2025 Elsewhere Prize</a
+          >
+        </li>
+      </ul>
+
+      <h2>Bio</h2>
+      <p class="bio">
+        Chris Dodds lives in Oklahoma City with his wife and two feral goblins.
+        His debut, <em>Necessary Cuts</em>, won the 2026 Miami University Press
+        Novella Prize.
+      </p>
     </section>
   </main>
 </Layout>
@@ -28,17 +69,34 @@ import Header from "../components/Header.astro";
 <style>
   .writing h2 {
     font-size: 1.5rem;
-    margin: 0 0 1rem 0;
+    margin: 2rem 0 1rem 0;
   }
 
+  .writing h2:first-child {
+    margin-top: 0;
+  }
+
+  .writing p,
   .writing ul {
     font-size: 1.125rem;
     line-height: 1.7;
     margin: 0;
+  }
+
+  .writing ul {
     padding-left: 1.5rem;
   }
 
   .writing li {
     margin-bottom: 0.75rem;
+  }
+
+  .writing blockquote {
+    border-left: 3px solid #ddd;
+    padding-left: 1.25em;
+    margin: 0.5em 0 0 0;
+    color: #555;
+    font-style: italic;
+    font-size: 1rem;
   }
 </style>

@@ -40,7 +40,7 @@ const totalPosts = allPosts.length;
             const fontSize = 0.875 + sizeRatio * 0.5; // Base 0.875rem, scales up to 1.375rem
 
             return (
-              <a href={`/tags/${tag}/`} class="tag-card" data-count={count}>
+              <a href={`/tags/${encodeURIComponent(tag)}/`} class="tag-card" data-count={count}>
                 <span class="tag-name" style={`font-size: ${fontSize}rem`}>
                   {tag}
                 </span>

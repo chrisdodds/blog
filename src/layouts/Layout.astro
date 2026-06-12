@@ -7,6 +7,7 @@ interface Props {
   description?: string;
   image?: string;
   noindex?: boolean;
+  canonical?: boolean;
 }
 
 const {
@@ -14,6 +15,7 @@ const {
   description = SITE_TAGLINE,
   image = "/favicon.svg",
   noindex = false,
+  canonical = true,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -27,7 +29,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="theme-color" content="#fff" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="canonical" href={canonicalURL} />
+    {canonical && <link rel="canonical" href={canonicalURL} />}
     {noindex && <meta name="robots" content="noindex, follow" />}
 
     <!-- Performance: DNS prefetch for external resources -->
