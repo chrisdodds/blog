@@ -8,6 +8,7 @@ interface Props {
   image?: string;
   noindex?: boolean;
   canonical?: boolean;
+  type?: "website" | "article";
 }
 
 const {
@@ -16,6 +17,7 @@ const {
   image = "/favicon.svg",
   noindex = false,
   canonical = true,
+  type = "website",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -42,7 +44,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="description" content={description} />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
