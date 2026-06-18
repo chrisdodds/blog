@@ -67,16 +67,16 @@ import Header from "../components/Header.astro";
   }
 
   .subscribe-form input[type="email"]:focus {
-    outline: 2px solid #0066cc;
+    outline: 2px solid var(--link);
     outline-offset: -1px;
-    border-color: #0066cc;
+    border-color: var(--link);
   }
 
   .subscribe-form button {
     padding: 0.5rem 1rem;
     font-size: 1rem;
     font-family: inherit;
-    background: #0066cc;
+    background: var(--link);
     color: #fff;
     border: none;
     border-radius: 0.25rem;
@@ -84,7 +84,7 @@ import Header from "../components/Header.astro";
   }
 
   .subscribe-form button:hover {
-    background: #0052a3;
+    background: var(--link-hover);
   }
 
   @media (max-width: 640px) {

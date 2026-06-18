@@ -66,6 +66,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       href="/rss.xml"
     />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charter-webfont@4/charter.min.css" />
+
     <!-- GoatCounter Analytics (privacy-friendly, free) -->
     <script
       data-goatcounter="https://chrisdodds.goatcounter.com/count"
@@ -80,6 +82,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 </html>
 
 <style is:global>
+  :root {
+    --link: #9a3b32;
+    --link-hover: #7d2f28;
+  }
+
   * {
     box-sizing: border-box;
   }
@@ -158,18 +165,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   }
 
   a {
-    color: #0066cc;
+    color: var(--link);
     text-decoration: underline;
   }
 
   a:hover {
-    color: #0052a3;
+    color: var(--link-hover);
   }
 
   /* Back links */
   .back {
     display: inline-block;
-    color: #0066cc;
+    color: var(--link);
     text-decoration: none;
     margin-bottom: 1rem;
     font-size: 0.875rem;
@@ -237,7 +244,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   }
 
   .pagination a {
-    color: #0066cc;
+    color: var(--link);
     text-decoration: none;
   }
 
@@ -302,19 +309,21 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
   .post-content a,
   .content a {
-    color: #0066cc;
+    color: var(--link);
     text-decoration: underline;
+    text-underline-offset: 1.5px;
+    text-decoration-thickness: 0.5px;
   }
 
   .post-content a:hover,
   .content a:hover {
-    color: #0052a3;
+    color: var(--link-hover);
   }
 
   /* Accessibility: Focus states */
   a:focus-visible,
   button:focus-visible {
-    outline: 2px solid #0066cc;
+    outline: 2px solid var(--link);
     outline-offset: 2px;
     border-radius: 2px;
   }

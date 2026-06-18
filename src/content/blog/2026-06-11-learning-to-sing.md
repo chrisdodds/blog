@@ -5,7 +5,7 @@ pubDate: 2026-06-11
 tags: ["music", "mental health"]
 ---
 
-My first guitar was a 1930s Harmony acoustic that was mostly held together by its own memory of having been a guitar. It lasted all of six months before I convinced my parents to splurge on a $100 upgrade from the local music store. I don't even think it had a brand name. I'm pretty sure the head was labeled "GUITAR", in case anyone was confused about that.
+My first guitar was a 1930s Harmony acoustic that was mostly held together by its own memory of having been a guitar. It lasted all of six months before I convinced my parents to splurge on a $100 upgrade from the local music store. I don't think it even had a brand name. I'm pretty sure the head was labeled "GUITAR", in case anyone was confused about that.
 
 I kept going for the next few decades, playing a little, occasionally upgrading, setting the guitar in the corner for a while. I never really felt compelled to get better at it. Good enough felt good enough.
 
