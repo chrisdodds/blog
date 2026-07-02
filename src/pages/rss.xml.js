@@ -15,7 +15,11 @@ export async function GET(context) {
   const items = await Promise.all(
     posts.map(async (post) => {
       const { Content } = await post.render();
-      const html = await container.renderToString(Content);
+      // Absolutize root-relative links/images so email clients (Buttondown) resolve them.
+      const html = (await container.renderToString(Content)).replace(
+        /(href|src)="\/(?!\/)/g,
+        `$1="${context.site}`,
+      );
 
       return {
         title: post.data.title,
