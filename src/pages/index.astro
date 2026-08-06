@@ -21,7 +21,7 @@ const postsWithContent = await Promise.all(
 );
 ---
 
-<Layout title="Chris Dodds" description={SITE_TAGLINE}>
+<Layout title="Chris Dodds — Writer and staff engineer" description={SITE_TAGLINE}>
   <!-- Homepage structured data -->
   <script
     type="application/ld+json"
@@ -35,10 +35,22 @@ const postsWithContent = await Promise.all(
         "@type": "Person",
         name: "Chris Dodds",
         url: "https://chrisdodds.net",
+        jobTitle: "Writer",
         sameAs: [
           "https://bsky.app/profile/liquid-chicken.bsky.social",
           "https://www.linkedin.com/in/doddschris/",
+          "https://necessarycuts.com",
         ],
+        knowsAbout: ["Fiction", "Creative nonfiction", "Site reliability engineering"],
+      },
+      about: {
+        "@type": "Book",
+        name: "Necessary Cuts",
+        url: "https://necessarycuts.com",
+        author: { "@type": "Person", name: "Chris Dodds" },
+        publisher: { "@type": "Organization", name: "Miami University Press" },
+        award: "Miami University Press 2026 Novella Prize",
+        datePublished: "2026",
       },
       potentialAction: {
         "@type": "ReadAction",
