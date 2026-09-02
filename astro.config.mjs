@@ -27,7 +27,17 @@ export default defineConfig({
     "/super-power-saying-no": "/",
     "/how-to-it-kick-chaos-in-the-face": "/",
     "/admit-your-struggles-help-others": "/",
-    "/blog/paycom-ai-layoffs": "/",
+    // Technical posts now live on fishsticklabs.com — bounce old chrisdodds.net URLs there.
+    "/blog/paycom-ai-layoffs": "https://fishsticklabs.com/blog/2025-10-01-paycom-ai-layoffs/",
+    "/what-i-love-about-sre": "https://fishsticklabs.com/blog/2019-02-03-what-i-love-about-sre/",
+    "/do-not-use-wildcard-alternate-domains-in-aws-cloudfront":
+      "https://fishsticklabs.com/blog/2020-06-12-do-not-use-wildcard-alternate-domains-in-aws-cloudfront/",
+    "/adventures-in-tuning-unicorn-for-kubernetes":
+      "https://fishsticklabs.com/blog/2020-02-23-adventures-in-tuning-unicorn-for-kubernetes/",
+    "/you-probably-shouldnt-be-using-kubernetes-for-your-new-startup":
+      "https://fishsticklabs.com/blog/2019-11-03-you-probably-shouldnt-be-using-kubernetes-for-your-new-startup/",
+    "/kubernetes-ec2-autoscaling-for-fun-and-profit":
+      "https://fishsticklabs.com/blog/2019-05-01-kubernetes-ec2-autoscaling-for-fun-and-profit/",
   },
   integrations: [mdx(), sitemap()],
   markdown: {
