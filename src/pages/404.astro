@@ -15,6 +15,10 @@ import Header from "../components/Header.astro";
           Looks like this page wandered off. Maybe it never existed, or maybe
           it's gone for good.
         </p>
+        <p class="tech-note">
+          Looking for my old SRE, DevOps, or infrastructure writing? It moved to
+          <a href="https://fishsticklabs.com/blog/">fishsticklabs.com</a>.
+        </p>
         <div class="actions">
           <a href="/" class="button">Go Home</a>
           <a href="/tags" class="button-secondary">Browse Tags</a>
@@ -48,6 +52,11 @@ import Header from "../components/Header.astro";
     font-size: 1.125rem;
     line-height: 1.7;
     margin: 0 0 2rem 0;
+  }
+
+  .tech-note {
+    font-size: 0.95rem;
+    opacity: 0.75;
   }
 
   .actions {
