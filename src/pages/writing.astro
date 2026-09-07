@@ -41,6 +41,19 @@ import Header from "../components/Header.astro";
         </li>
         <li>
           <a href="https://marrowmagazine.com/the-desert/" target="_blank" rel="noopener noreferrer"><em>The Desert</em></a> — Marrow Magazine, Issue 16
+          <span class="buy">In print: <a
+              href="https://bookshop.org/p/books/marrow-magazine-issue-16/478b4c59cca5ab41?ean=9798233900310"
+              target="_blank"
+              rel="noopener noreferrer">Bookshop.org</a
+            > · <a
+              href="https://www.barnesandnoble.com/w/marrow-magazine-marrow-magazine/1151238159?ean=9798233900310"
+              target="_blank"
+              rel="noopener noreferrer">Barnes &amp; Noble</a
+            > · <a
+              href="https://www.amazon.com/dp/B0HHKRMLDS"
+              target="_blank"
+              rel="noopener noreferrer">Amazon</a
+            ></span>
         </li>
       </ul>
 
@@ -82,6 +95,13 @@ import Header from "../components/Header.astro";
 
   .writing li {
     margin-bottom: 0.75rem;
+  }
+
+  .writing .buy {
+    display: block;
+    font-size: 0.9375rem;
+    color: #555;
+    margin-top: 0.2rem;
   }
 
   .writing blockquote {
